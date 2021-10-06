@@ -1,0 +1,56 @@
+<launch>
+
+  <arg name="robot" default="orcvio_robot"/>
+  <arg name="fixed_frame_id" default="world"/>
+
+  
+  <!-- evaluation mode is used to compare the results of different flags -->
+  <arg name="evaluation_mode" default="false" />
+
+  <arg name="image_topic" default="/camera/image_raw" />
+
+  <node name="orcvio_mapping" pkg="orcvio_mapping" 
+     type="orcvio_mapping_node" output="screen" >
+
+          <param name="fixed_frame_id" value="$(arg fixed_frame_id)"/>
+
+          <!-- camera extrinsics -->
+          <rosparam param="T_cam_imu">
+              [
+              0.9999662089030257, -0.006906390871642436, -0.004459015276860498, 0.008708247801839689, 
+              0.006874866759746373, 0.9999515383335019, -0.007046785898527633, -0.02174943710377053, 
+              0.004507467043353249, 0.007015892643993886, 0.9999652293911333, -0.022785325544131582, 
+              0., 0., 0., 1. 
+              ]
+          </rosparam>
+
+          <!-- bag topics -->
+          <param name="topic_bbox"  type="string" value="/SortRos/tracked_bbox" />
+
+          <param name="topic_image"  type="string" value="$(arg image_topic)" />
+          <param name="topic_caminfo"  type="string" value="/camera/infra1/camera_info" />          
+          <param name="topic_pose"  type="string" value="/orcvio_robot/system/poseout" />
+
+          <param name="max_object_feature_track"             type="int"    value="20" />
+          <param name="min_object_feature_track"               type="int"    value="5" />
+
+          <!-- object feature -->
+          <rosparam command="load" file="$(find orcvio_mapping)/config/object_feat_erl.yaml"/>
+          <param name="load_gt_object_info_flag"  type="bool" value="false" />
+
+          <param name="to_color_image_flag"  type="bool" value="true" />
+          
+          <param name="use_unity_dataset_flag"  type="bool" value="false" />
+
+
+          <!-- this has to be consistent with VIO config  -->
+          <param name="use_left_perturbation_flag"  type="bool" value="false" />
+          <param name="use_new_bbox_residual_flag"  type="bool" value="true" />
+
+          <!-- Other empirical parameters-->
+          <param name="min_dist_btw_objects"  type="double" value="4.0" />
+          <param name="max_dist_btw_cam_obj"  type="double" value="6.0" />
+          
+  </node>
+
+</launch>
