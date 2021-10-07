@@ -1,8 +1,6 @@
-# OrcVIO-Lite
+## About 
 
-### About 
-
-- Object residual constrained Visual-Inertial Odometry (OrcVIO) is a visual-inertial odometry pipeline, which is tightly coupled with tracking and optimization over structured object models. It provides accurate trajectory estimation and large-scale object-level mapping from online **Mono+IMU** data.
+- Object residual constrained Visual-Inertial Odometry (OrcVIO) is a visual-inertial odometry pipeline, which is tightly coupled with tracking and optimization over structured object models. It provides accurate trajectory estimation and large-scale object-level mapping from online **Stereo+IMU** data.
 
 - OrcVIO-Lite only uses **bounding boxs** and no keypoints. The object mapping module and VIO module are implemented in separate ROS nodelets and are decoupled.  
 
@@ -30,79 +28,25 @@ The core algorithm depends on `Eigen`, `Boost`, `Suitesparse`, `Ceres`, `OpenCV`
 
 ## 2. Installation
 
-### 2.1 Non-ROS version
-
-```
-$ git clone --recursive https://github.com/shanmo/OrcVIO-Lite.git
-$ cd OrcVIO-Lite
-$ mkdir build
-$ cd build
-$ cmake -D CMAKE_BUILD_TYPE=Release ..
-$ make
-```
-
-### 2.2 ROS version
+### ROS version
 
 - Environment is `Ubuntu 18.04` with ROS `Melodic`
 - The ROS version also depends on [catkin simple](https://github.com/catkin/catkin_simple), please put it in the `ros_wrapper/src` folder
 
 ```
-$ git clone --recursive https://github.com/shanmo/OrcVIO-Lite.git
-$ cd OrcVIO-Lite/ros_wrapper
+$ git clone --recursive https://github.com/shanmo/OrcVIO-Stereo-Mapping.git
+$ cd OrcVIO-Stereo-Mapping/ros_wrapper
 $ catkin_make
 $ source ./devel/setup.bash
 ```
 
-## 3. Evaluation 
+## 3. Demo 
 
-### 3.1 Non-ROS Version
+- [ERL indoor dataset (chairs, monitors)]()
 
-- **Download dataset**
-
-  Download [EuRoC MAV Dataset](http://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets) to ***PATH_TO_EUROC_DATASET/***.
-
-- **VIO**
-
-```
-$ cd PATH_TO_ORCVIO_LITE/
-$ ./run_euroc.sh PATH_TO_EUROC_DATASET/
-```
+- Indoor rosbags were collected with [Realsense D455](https://www.intelrealsense.com/depth-camera-d455/) in Existential Robotics Lab, University of California San Diego.
 
 
-
-### 3.2 ROS Version
-
-- **Download dataset**
-
-  [ERL indoor dataset (chairs, monitors)](https://www.dropbox.com/s/xe5ykbylawhanft/erl_lite_realsense_demo.bag?dl=0)
-
-  * Indoor rosbags were collected with [Realsense D435i](https://www.intelrealsense.com/depth-camera-d435i/) in Existential Robotics Lab, University of California San Diego.
-
-- **VIO**
-
-```
-$ cd OrcVIO_Lite/ros_wrapper/
-$ roslaunch orcvio orcvio_vio_rs_d435i.launch path_bag:=PATH_TO_ERL_DATASET/
-```
-
-- **VIO & Mapping**
-
-```
-$ cd OrcVIO_Lite/ros_wrapper/
-$ roslaunch orcvio orcvio_mapping_rs_d435i.launch path_bag:=PATH_TO_ERL_DATASET/
-```
-
-- `rviz` visualization 
-
-![demo](assets/erl_realsense_demo.gif)
-
-## 4. Simulation 
-
-- follow [this readme](doc/running_simulation.md) to run rosbag from simulated GQ environment 
-
-## 5. Additional notes
-
-- follow [this guide](doc/object_mapping.md) for tunning object mapping parameters 
 
 ## License
 
@@ -110,8 +54,6 @@ $ roslaunch orcvio orcvio_mapping_rs_d435i.launch path_bag:=PATH_TO_ERL_DATASET/
 MIT License
 Copyright (c) 2021 ERL at UCSD
 ```
-
-
 
 ## Reference 
 

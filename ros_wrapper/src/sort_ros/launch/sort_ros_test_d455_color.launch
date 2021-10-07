@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <arg name="nodelet_manager" default="sort_ros_nodelet_manager" />
+  <arg name="image_topic" default="/camera/color/image_raw" />
+
+  <include file="$(find darknet_ros)/launch/darknet_ros.launch" >
+    <arg name="image" value="$(arg image_topic)" />
+  </include>
+
+</launch>

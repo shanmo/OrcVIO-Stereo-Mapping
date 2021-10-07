@@ -1,8 +1,5 @@
 %YAML:1.0
 
-# output directory
-output_dir: "/home/erl/orcvio/OrcVIO-Lite/cache"
-
 # switches
 if_FEJ: 0    # 0(false) or 1(true)
 estimate_extrin: 0    # 0(false) or 1(true)
@@ -15,28 +12,28 @@ distortion_model: "radtan"    # only support "radtan" and "equidistant"
 resolution_width: 640
 resolution_height: 480
 intrinsics:
-   fx: 260.99805320956386
-   fy: 260.99805320956386
-   cx: 320
-   cy: 240
+   fx: 387.47454833984375
+   fy: 387.47454833984375
+   cx: 316.1062927246094
+   cy: 238.7586212158203
 distortion_coeffs:
-   k1: 0
-   k2: 0
-   p1: 0
-   p2: 0
+   k1: 0.0
+   k2: 0.0
+   p1: 0.0
+   p2: 0.0
 
 # imu-camera extrinsic, including spacial and temporal parameters
+# from IMU to camera, same with Kalibr
 T_cam_imu: !!opencv-matrix
    rows: 4
    cols: 4
    dt: d
    data:
-    [0.0,  -1.0, 0.0, 0.1,
-      0.0,  0.0, -1.0, 0,
-      1.0, 0.0, 0.0, -0.1,
-      0.0,  0.0, 0.0, 1.0]
-td: 0.0
-
+      [0.9999887972997616, 0.004225660403089795, -0.002132854691210053, -0.06510852338269565, 
+       -0.004224561368945015, 0.9999909415437157, 0.0005195303196076303, -0.004589801762755343, 
+       0.0021350307295388425, -0.0005105141239311359, 0.9999975905066537, -0.01765349149011269, 
+       0., 0., 0., 1. ]
+td: 0
 
 # TODO: if calibrate camera instrinsic online
 
@@ -49,7 +46,7 @@ track_precision: 0.01
 ransac_threshold: 1
 max_features_num: 200
 min_distance: 20
-flag_equalize: 0    # 0(false) or 1(true)
+flag_equalize: 1    # 0(false) or 1(true)
 pub_frequency: 10
 
 # window size
@@ -88,7 +85,7 @@ reset_fej_threshold: 10.11
 # zupt settings
 if_ZUPT_valid: 1    # 0(false) or 1(true)
 
-if_use_feature_zupt_flag: 1 # 0(false) or 1(true)
+if_use_feature_zupt_flag: 0 # 0(false) or 1(true)
 zupt_max_feature_dis: 2e-3
 
 zupt_noise_v: 1e-2    # std
@@ -99,7 +96,7 @@ zupt_noise_q: 3.4e-2
 static_duration: 1.0
 
 # measurement rate
-imu_rate: 250
+imu_rate: 200
 img_rate: 30
 
 # augmented feature state settings
@@ -125,7 +122,13 @@ feature_cost_threshold: 4.7673e-04
 # the threshold for distance check in feature LM 
 init_final_dist_threshold: 1e1
 # the flag whether we discard large update 
-discard_large_update_flag: 0
+discard_large_update_flag: 1
+
+# whether to use object residual to update camera pose 
+use_object_residual_update_cam_pose_flag: 0 # 0(not use) or 1(use)
+
+# whether we skip the update step 
+prediction_only_flag: 0
 
 # if using ground-truth for initilization
 initial_use_gt: 0

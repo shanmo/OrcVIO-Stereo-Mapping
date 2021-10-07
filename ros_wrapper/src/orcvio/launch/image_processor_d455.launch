@@ -2,7 +2,7 @@
 
   <arg name="robot" default="firefly_sbx"/>
   <arg name="calibration_file"
-    default="$(find orcvio)/config/camchain-imucam-unity-gq.yaml"/>
+    default="$(find orcvio)/config/camchain-imucam-d455.yaml"/>
 
   <!-- Image Processor Nodelet  -->
   <group ns="$(arg robot)">
@@ -27,9 +27,9 @@
       <!-- <param name="flag_equalize" type="bool"   value="true" /> -->
       <param name="flag_equalize" type="bool"   value="false" />
 
-      <remap from="~imu" to="/falcon/imu"/>
-      <remap from="~cam0_image" to="/falcon/cam_left/image_raw"/>
-      <remap from="~cam1_image" to="/falcon/cam_right/image_raw"/>
+      <remap from="~imu" to="/camera/imu"/>
+      <remap from="~cam0_image" to="/camera/infra1/image_rect_raw"/>
+      <remap from="~cam1_image" to="/camera/infra2/image_rect_raw"/>
 
     </node>
   </group>

@@ -1,0 +1,8 @@
+darknet_ros/darknet_ros
+/home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/.private/darknet_ros/cmake.lock /home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/./cmake.lock
+/home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/.private/darknet_ros/lib/libdarknet_ros_lib.so /home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/lib/libdarknet_ros_lib.so
+/home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/.private/darknet_ros/lib/libdarknet_ros_nodelet.so /home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/lib/libdarknet_ros_nodelet.so
+/home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/.private/darknet_ros/lib/pkgconfig/darknet_ros.pc /home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/lib/pkgconfig/darknet_ros.pc
+/home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/.private/darknet_ros/lib/darknet_ros/darknet_ros /home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/lib/darknet_ros/darknet_ros
+/home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/.private/darknet_ros/share/darknet_ros/cmake/darknet_rosConfig.cmake /home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/share/darknet_ros/cmake/darknet_rosConfig.cmake
+/home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/.private/darknet_ros/share/darknet_ros/cmake/darknet_rosConfig-version.cmake /home/erl/repos/OrcVIO-Lite/ros_wrapper/devel/share/darknet_ros/cmake/darknet_rosConfig-version.cmake
