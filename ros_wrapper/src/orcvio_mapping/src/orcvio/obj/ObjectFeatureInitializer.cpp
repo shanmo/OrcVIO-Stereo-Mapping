@@ -516,14 +516,7 @@ namespace orcvio
 
         // in python V = np.diag(v * v)
         Eigen::Vector3d empirical_bbox_scale;
-        // default values 
-        // empirical_bbox_scale << 1.0, 1.0, 1.0;
-        // for medfield 
-        // empirical_bbox_scale << 0.25, 0.25, 0.25;
-        // for phoenix 
-        // add this since the detected bounding box is larger than object 
-        // empirical_bbox_scale << 1, 1, 1;
-        // for unity GQ environment
+        // ERL demo
         empirical_bbox_scale << 0.75, 0.75, 0.75;
 
         // Eigen::Vector3d vv = object_mean_shape.cwiseProduct(object_mean_shape);
