@@ -43,7 +43,10 @@ $ source ./devel/setup.bash
 ## 3. Demo 
 
 - [ERL indoor dataset (chairs)](https://www.dropbox.com/s/mwmv5ql3ht1i61n/d455_one_way_demo_bboxes.bag?dl=0)
-   * Indoor rosbags were collected with [Realsense D455](https://www.intelrealsense.com/depth-camera-d455/) in Existential Robotics Lab, University of California San Diego.
+
+- Indoor rosbags were collected with [Realsense D455](https://www.intelrealsense.com/depth-camera-d455/) in Existential Robotics Lab, University of California San Diego
+
+- Please refer to [wiki](https://github.com/shanmo/OrcVIO-Stereo-Mapping/wiki) regarding how to setup D455  
 
 - run `roslaunch orcvio orcvio_d455.launch` 
 
