@@ -4,7 +4,6 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /Global Options1
         - /TF1/Frames1
         - /VIO1/Shape1
         - /Covariance1/Covariance1
@@ -43,7 +42,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -56,12 +55,12 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 20
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Alpha: 0.699999988079071
       Cell Size: 5
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: true
+      Enabled: false
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -74,7 +73,7 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 4
       Reference Frame: <Fixed Frame>
-      Value: true
+      Value: false
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 1000
@@ -92,10 +91,11 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
+        global:
+          odom:
+            {}
         world:
-          global:
-            odom:
-              {}
+          {}
       Update Interval: 0
       Value: true
     - Angle Tolerance: 0
@@ -402,25 +402,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 31.018856048583984
+      Distance: 14.366315841674805
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.1659226417541504
-        Y: -10.683083534240723
-        Z: -0.608454167842865
+        X: -3.6639244556427
+        Y: 3.7800803184509277
+        Z: -4.884774208068848
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.29479607939720154
+      Pitch: 1.11479651927948
       Target Frame: world
       Value: Orbit (rviz)
-      Yaw: 1.677112340927124
+      Yaw: 5.9102935791015625
     Saved: ~
 Window Geometry:
   Displays:
