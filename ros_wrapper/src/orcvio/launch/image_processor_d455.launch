@@ -24,8 +24,8 @@
       <param name="ransac_threshold" value="3"/>
       <param name="stereo_threshold" value="5"/>
 
-      <!-- <param name="flag_equalize" type="bool"   value="true" /> -->
-      <param name="flag_equalize" type="bool"   value="false" />
+      <param name="flag_equalize" type="bool"   value="true" />
+      <!-- <param name="flag_equalize" type="bool"   value="false" /> -->
 
       <remap from="~imu" to="/camera/imu"/>
       <remap from="~cam0_image" to="/camera/infra1/image_rect_raw"/>

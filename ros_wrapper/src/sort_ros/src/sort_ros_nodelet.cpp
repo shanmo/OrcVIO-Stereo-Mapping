@@ -81,12 +81,10 @@ virtual void onInit()
 // must use a ConstPtr callback to use zero-copy transport
 void messageCb(const sensor_msgs::ImageConstPtr& message,
                 const darknet_ros_msgs::BoundingBoxesConstPtr& bboxes) {
-
     // track bbox 
     vector<TrackingBox> detFrameData;
     for (auto bbox : bboxes->bounding_boxes)
     {
-
         TrackingBox tb;
         tb.box = Rect_<float>(Point_<float>(bbox.xmin, bbox.ymin), Point_<float>(bbox.xmax, bbox.ymax));
         tb.object_class = bbox.Class;
@@ -152,7 +150,6 @@ void publishDetectionImage()
     detectionImagePublisher_.publish(*cvImage.toImageMsg());
     
     // ROS_DEBUG("Detection image has been published.");
-
 }
 
 std::unique_ptr<message_filters::Subscriber<sensor_msgs::Image>> image_sub_;

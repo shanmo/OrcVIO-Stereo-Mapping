@@ -81,8 +81,6 @@ Visualization Manager:
         All Enabled: false
         global:
           Value: true
-        odom:
-          Value: true
         world:
           Value: true
       Marker Scale: 4
@@ -91,11 +89,9 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        global:
-          odom:
-            {}
         world:
-          {}
+          global:
+            {}
       Update Interval: 0
       Value: true
     - Angle Tolerance: 0
@@ -313,7 +309,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /falcon/cam_left/image_raw
+      Image Topic: /camera/infra1/image_rect_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
@@ -356,7 +352,7 @@ Visualization Manager:
       Value: true
     - Class: rviz/Image
       Enabled: true
-      Image Topic: /orcvio/track_image
+      Image Topic: /SortRos/detection_image
       Max Value: 1
       Median window: 5
       Min Value: 0
@@ -371,7 +367,7 @@ Visualization Manager:
       Marker Topic: /orcvio/quadrics
       Name: MarkerArray
       Namespaces:
-        "": true
+        {}
       Queue Size: 100
       Value: true
   Enabled: true
@@ -402,7 +398,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 64.12217712402344
+      Distance: 38.453773498535156
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1

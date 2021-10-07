@@ -729,7 +729,7 @@ void ImageProcessor::addNewFeatures() {
 
     if (matched_new_features < 5 &&
         static_cast<double>(matched_new_features) / static_cast<double>(detected_new_features) < 0.1)
-        ROS_WARN("Images at [%f] seems unsynced...", cam0_curr_img_ptr->header.stamp.toSec());
+        ROS_WARN("Too few features matched...", cam0_curr_img_ptr->header.stamp.toSec());
 
     // Group the features into grids
     GridFeatures grid_new_features;

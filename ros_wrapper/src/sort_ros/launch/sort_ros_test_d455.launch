@@ -14,4 +14,29 @@
     <arg name="image" value="$(arg image_topic)" />
   </include>
 
+  <node pkg="nodelet" type="nodelet" name="SortRos"
+    args="standalone sort_ros/SortRos"
+    output="screen">
+  <param name="image_topic" value="$(arg image_topic)" />
+  <param name="bbox_topic" value="/darknet_ros/bounding_boxes" />
+  <param name="max_age" value="3" />
+  <param name="min_hits" value="5" />
+  <param name="iou_threshold" value="0.3" />
+  </node>
+
+  <arg name="outdata_dir" default="/home/erl/repos/data" />
+  <arg name="record_rosbag" default="true" />
+  <node if="$(arg record_rosbag)" pkg="rosbag" type="record" name="bag_record"
+    args=" -O $(arg outdata_dir)/d455_one_way_demo_bboxes.bag
+              /camera/infra1/camera_info
+              /camera/infra1/image_rect_raw/compressed
+              /camera/infra2/image_rect_raw/compressed
+              /camera/imu
+              /darknet_ros/bounding_boxes
+              /SortRos/tracked_bbox
+              /SortRos/detection_image/compressed
+              " />
+
+  <node pkg="rqt_image_view" type="rqt_image_view" name="rqt_image_view_det" args=" /SortRos/detection_image/compressed"/>
+
 </launch>
