@@ -10,6 +10,7 @@ Panels:
         - /Covariance1/Covariance1
         - /Covariance1/Covariance1/Position1
         - /Ground Truth1/Shape1
+        - /Path2
       Splitter Ratio: 0.5
     Tree Height: 292
   - Class: rviz/Selection
@@ -81,6 +82,8 @@ Visualization Manager:
         All Enabled: false
         global:
           Value: true
+        odom:
+          Value: true
         world:
           Value: true
       Marker Scale: 4
@@ -91,7 +94,8 @@ Visualization Manager:
       Tree:
         world:
           global:
-            {}
+            odom:
+              {}
       Update Interval: 0
       Value: true
     - Angle Tolerance: 0
@@ -293,7 +297,7 @@ Visualization Manager:
       Head Length: 0.20000000298023224
       Length: 0.30000001192092896
       Line Style: Billboards
-      Line Width: 1
+      Line Width: 0.20000000298023224
       Name: Path
       Offset:
         X: 0
@@ -367,7 +371,7 @@ Visualization Manager:
       Marker Topic: /orcvio/quadrics
       Name: MarkerArray
       Namespaces:
-        {}
+        "": true
       Queue Size: 100
       Value: true
   Enabled: true
@@ -398,7 +402,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 38.453773498535156
+      Distance: 31.018856048583984
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -413,10 +417,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.3647964000701904
+      Pitch: 0.29479607939720154
       Target Frame: world
       Value: Orbit (rviz)
-      Yaw: 1.5871129035949707
+      Yaw: 1.677112340927124
     Saved: ~
 Window Geometry:
   Displays:

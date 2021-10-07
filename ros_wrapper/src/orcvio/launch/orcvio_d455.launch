@@ -65,7 +65,7 @@
       <param name="initial_covariance/extrinsic_rotation_cov" value="0"/>
       <param name="initial_covariance/extrinsic_translation_cov" value="0"/>
 
-      <remap from="~imu" to="/falcon/imu"/>
+      <remap from="~imu" to="/camera/imu"/>
       <remap from="~features" to="image_processor/features"/>
 
     </node>

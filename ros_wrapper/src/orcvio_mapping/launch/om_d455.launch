@@ -25,7 +25,7 @@
           </rosparam>
 
           <!-- bag topics -->
-          <param name="topic_bbox"  type="string" value="/SortRos/tracked_bounding_boxes" />
+          <param name="topic_bbox"  type="string" value="/SortRos/tracked_bbox" />
 
           <param name="topic_image"  type="string" value="$(arg image_topic)" />
           <param name="topic_caminfo"  type="string" value="/camera/infra1/camera_info" />          
