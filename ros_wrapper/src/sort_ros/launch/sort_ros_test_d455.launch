@@ -5,10 +5,10 @@
   <arg name="nodelet_manager" default="sort_ros_nodelet_manager" />
   <arg name="image_topic" default="/camera/infra1/image_rect_raw" />
 
-  <node pkg="rosbag" type="play" name="player" output="screen" args="--clock /home/erl/repos/data/robotic-car/D455_10102021_atk6_2.bag -q"/>
+  <node pkg="rosbag" type="play" name="player" output="screen" args="--clock /home/erl/repos/data/robotic-car/ATK_640480.bag -q"/>
   
-  <node name="republish_img1" type="republish" pkg="image_transport" output="screen" args="raw in:=/camera/infra1/image_rect_raw  compressed out:=/camera/infra1/image_rect_raw" />
-  <node name="republish_img2" type="republish" pkg="image_transport" output="screen" args="raw in:=/camera/infra2/image_rect_raw  compressed out:=/camera/infra2/image_rect_raw" />
+  <node name="republish_img1" type="republish" pkg="image_transport" output="screen" args="compressed in:=/camera/infra1/image_rect_raw  raw out:=/camera/infra1/image_rect_raw" />
+  <node name="republish_img2" type="republish" pkg="image_transport" output="screen" args="compressed in:=/camera/infra2/image_rect_raw  raw out:=/camera/infra2/image_rect_raw" />
 
   <include file="$(find darknet_ros)/launch/darknet_ros.launch" >
     <arg name="image" value="$(arg image_topic)" />
@@ -27,7 +27,7 @@
   <arg name="outdata_dir" default="/home/erl/repos/data" />
   <arg name="record_rosbag" default="true" />
   <node if="$(arg record_rosbag)" pkg="rosbag" type="record" name="bag_record"
-    args=" -O $(arg outdata_dir)/d455_car_demo_bboxes.bag
+    args=" -O $(arg outdata_dir)/d455_car_demo_new_bboxes.bag
               /camera/infra1/camera_info
               /camera/infra1/image_rect_raw/compressed
               /camera/infra2/image_rect_raw/compressed

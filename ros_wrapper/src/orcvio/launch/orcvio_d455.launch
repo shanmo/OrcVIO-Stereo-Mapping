@@ -12,7 +12,7 @@
   <!-- path for rosbags  -->
   <!-- <arg name="rosbag_path" default="" /> -->
   <!-- <arg name="rosbag_path" default="/home/erl/repos/data/d455_one_way_demo_bboxes.bag" /> -->
-   <arg name="rosbag_path" default="/home/erl/repos/data/d455_car_demo_bboxes.bag" />
+   <arg name="rosbag_path" default="/home/erl/repos/data/d455_car_demo_new_bboxes.bag" />
   
   <!-- open rviz  -->
   <!-- do not open rviz when running on jackal or uav  -->

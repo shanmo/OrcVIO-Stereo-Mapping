@@ -50,9 +50,11 @@ $ source ./devel/setup.bash
 
 ![demo](assets/erl_d455_demo.gif)
 
-- Download [ERL indoor robotic car dataset](https://www.dropbox.com/s/ul8ld3zagdtpqqp/d455_car_demo_bboxes.bag?dl=0), change the rosbag path, and run `roslaunch orcvio orcvio_d455.launch` to get the demo below 
+- Download [ERL indoor robotic car dataset](https://www.dropbox.com/s/uzauaeegf8i82kg/d455_car_demo_new_bboxes.bag?dl=0), change the rosbag path, and run `roslaunch orcvio orcvio_d455.launch` to get the demos like below 
 
 ![demo](assets/erl_d455_car_demo.gif)
+
+![demo](assets/erl_d455_car_demo_640x480.gif)
 
 ## License
 
