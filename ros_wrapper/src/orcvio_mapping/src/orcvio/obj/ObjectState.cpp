@@ -45,12 +45,7 @@ void save_object_state_to_file(const ObjectState & object_state, const std::vect
     std::string filepath_format)
 {
     boost::format boost_filepath_format(filepath_format);
-    if (!boost::filesystem::is_directory(filepath_format))
-        return;
-
     std::ofstream file((boost_filepath_format % object_state.object_id).str());
-
-    // std::cout << "debug file " << file.is_open() << std::endl;
 
     if (file.is_open())
     {
@@ -65,9 +60,6 @@ void save_object_state_to_file(const ObjectState & object_state, const std::vect
             file << time << " ";
         }
     }
-    // else
-    //     std::cout << "cannot open file" << std::endl;
-
 }
 
 }

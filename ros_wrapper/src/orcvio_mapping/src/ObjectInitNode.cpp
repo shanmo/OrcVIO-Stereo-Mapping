@@ -45,53 +45,8 @@ namespace orcvio_mapping
         nh.param<std::string>("topic_caminfo", topic_caminfo, "/husky/camera/camera_info");
 
         // get the dir path to save object map
-        std::string ros_log_dir;
-        if ( ! ros::get_environment_variable(ros_log_dir, "ROS_LOG_DIR") ) {
-            if ( ros::get_environment_variable(ros_log_dir, "HOME") ) {
-                ros_log_dir = ros_log_dir + "/.ros";
-            } else {
-                ROS_FATAL("Environment variable HOME is not set");
-            }
-        }
-        nh.param<std::string>("result_dir_path_object_map", result_dir_path_object_map, ros_log_dir);
+        nh.param<std::string>("result_dir_path_object_map", result_dir_path_object_map, "");
         
-        if (exists(result_dir_path_object_map))
-        {
-            directory_iterator end_it;
-            directory_iterator it(result_dir_path_object_map.c_str());
-            if (it == end_it)
-            {
-                // this is fine 
-            }
-            else 
-            {
-                ROS_INFO_STREAM("object map path exists and nonempty, delete contents in " << result_dir_path_object_map.c_str());
-                // if this dir already exists, then delete all contents inside
-                std::string del_cmd = "exec rm -r " + result_dir_path_object_map + "*";
-                int tmp = system(del_cmd.c_str());
-            }
-        }
-        else
-        {
-            // if this dir does not exist, create the dir
-            const char *path = result_dir_path_object_map.c_str();
-            boost::filesystem::path dir(path);
-            if (boost::filesystem::is_directory(dir)){
-                if (boost::filesystem::create_directories(dir))
-                {
-                    ROS_INFO_STREAM("Directory Created: " << result_dir_path_object_map.c_str());
-                } else {
-                    ROS_FATAL("Unable to create directory ");
-                }
-            }
-            else
-            {
-                ROS_INFO_STREAM("No directory provided in .yaml file");
-            }
-            
-
-        }
-
         sub_caminfo = nh.subscribe(topic_caminfo.c_str(), 9999, &ObjectInitNode::callback_caminfo, this);
         sub_gtpose = nh.subscribe(topic_pose.c_str(), 9999, &ObjectInitNode::callback_pose, this);
 
