@@ -25,7 +25,7 @@ if __name__ == "__main__":
     parser.add_argument('--output_bag', type=str, default='/media/erl/disk1/orcvio/opcity_40cars/opcity_40cars_quad_new.bag',
                         help='Output Rosbag')
 
-    parser.add_argument('--origin_kpts_topic', type=str, default='/falcon/cam_left/detection',
+    parser.add_argument('--origin_kpts_topic', type=str, default='/husky1/detection',
                         help='The orignal topic name of the kpts info. /ns/detection')
     parser.add_argument('--bbox_topic', type=str, default='/sort_ros/tracked_bounding_boxes',
                         help='The topic name of the bbox info.')

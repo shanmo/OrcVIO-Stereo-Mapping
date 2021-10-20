@@ -143,6 +143,8 @@ add_library(staticInitializer
 target_link_libraries(staticInitializer
     ${SUITESPARSE_LIBRARIES}
 )
+add_dependencies(staticInitializer orcvio_generate_messages_cpp)
+
 # -- Dynamic Initializer
 add_library(dynamicInitializer
     src/DynamicInitializer.cpp
@@ -156,6 +158,8 @@ target_link_libraries(dynamicInitializer
     ${CERES_LIBRARIES}
     ${OpenCV_LIBRARIES}
 )
+add_dependencies(dynamicInitializer orcvio_generate_messages_cpp)
+
 # -- Flexible Initializer
 add_library(flexibleInitializer
     src/FlexibleInitializer.cpp
