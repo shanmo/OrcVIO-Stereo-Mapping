@@ -7,7 +7,7 @@
   <!-- evaluation mode is used to compare the results of different flags -->
   <arg name="evaluation_mode" default="false" />
 
-  <arg name="image_topic" default="/husky1/cam_left/image" />
+  <arg name="image_topic" default="/husky1/camera_left/image" />
    
   <node name="orcvio_mapping" pkg="orcvio_mapping" 
      type="orcvio_mapping_node" output="screen" >
